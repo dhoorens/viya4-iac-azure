@@ -383,7 +383,7 @@ data "external" "git_hash" {
 }
 
 data "external" "iac_tooling_version" {
-  program = ["files/iac_tooling_version.sh"]
+  program = ["bash", "files/iac_tooling_version.sh"]
 }
 
 data "template_file" "sas_iac_buildinfo" {

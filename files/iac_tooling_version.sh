@@ -3,8 +3,13 @@
 # We need to return an error if things don't work
 set -e
 
-function check_deps() {
-  test -f $(which jq) || error_exit "jq command not detected in path, please install it"
+function error_exit {
+  echo $1
+  exit 1
+}
+
+function check_deps {
+  test -f "$(which jq)" || error_exit "jq command not detected in path, please install it"
 }
 
 check_deps
